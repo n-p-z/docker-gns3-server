@@ -5,6 +5,7 @@ ADD ./start.sh /start.sh
 ADD ./config.ini /config.ini
 ADD ./requirements.txt /requirements.txt
 COPY dependencies.json /tmp/dependencies.json
+ADD ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
 
 RUN mkdir /data && \
     apk add --no-cache --virtual=build-dependencies jq gcc python3-dev musl-dev linux-headers \
