@@ -1,7 +1,6 @@
 FROM alpine:3.20.2
 
 # Install the magic wrapper.
-ADD ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
 ADD ./start.sh /start.sh
 ADD ./config.ini /config.ini
 ADD ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
