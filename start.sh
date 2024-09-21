@@ -8,6 +8,8 @@ if [ ! -e $CONFIG ]; then
 fi
 
 python3 /CiscoIOUKeygen.py > /data/.iourc
+echo [license] > iourc1 | cat .iourc | grep ";" >> iourc1
+mv iourc1 .iourc
 
 brctl addbr virbr0
 ip link set dev virbr0 up
