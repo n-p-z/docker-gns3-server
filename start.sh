@@ -6,8 +6,8 @@ fi
 if [ ! -e $CONFIG ]; then
 	cp /config.ini /data
 fi
+python3 /data/CiscoIOUKeygen.py > /data/.iourc
 
-python3 /CiscoIOUKeygen.py > /data/.iourc
 echo [license] > iourc1 | cat .iourc | grep ";" >> iourc1
 mv iourc1 .iourc
 
