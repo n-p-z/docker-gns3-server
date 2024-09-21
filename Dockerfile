@@ -1,10 +1,10 @@
 FROM alpine:3.20.2
 
 # Install the magic wrapper.
-ADD ./start.sh /start.sh
-ADD ./config.ini /config.ini
-ADD ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
-ADD ./requirements.txt /requirements.txt
+COPY ./start.sh /start.sh
+COPY ./config.ini /config.ini
+COPY ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
+COPY ./requirements.txt /requirements.txt
 COPY dependencies.json /tmp/dependencies.json
 
 
@@ -22,4 +22,3 @@ RUN ln -s /bin/busybox /usr/lib/python*/site-packages/gns3server/compute/docker/
 WORKDIR /data
 
 VOLUME ["/data"]
-
