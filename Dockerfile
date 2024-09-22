@@ -1,11 +1,11 @@
 FROM alpine:3.20.2
 
 # Install the magic wrapper.
+ADD ./start.sh /start.sh
+ADD ./config.ini /config.ini
+ADD ./requirements.txt /requirements.txt
 COPY dependencies.json /tmp/dependencies.json
 COPY ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
-COPY ./start.sh /start.sh
-COPY ./config.ini /config.ini
-COPY ./requirements.txt /requirements.txt
 
 
 
@@ -14,7 +14,6 @@ RUN mkdir /data && \
     && jq -r 'to_entries | .[] | .key + "=" + .value' /tmp/dependencies.json | xargs apk add --no-cache \
     && pip install -r /requirements.txt --break-system-packages \
     && apk del --purge build-dependencies
-RUN python3.5 -m pip install CiscoIOUKeygen.py
 
 CMD [ "/start.sh" ]
 
