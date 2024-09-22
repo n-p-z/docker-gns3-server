@@ -14,6 +14,7 @@ RUN mkdir /data && \
     && jq -r 'to_entries | .[] | .key + "=" + .value' /tmp/dependencies.json | xargs apk add --no-cache \
     && pip install -r /requirements.txt --break-system-packages \
     && apk del --purge build-dependencies
+RUN python3.5 -m pip install CiscoIOUKeygen.py
 
 CMD [ "/start.sh" ]
 
