@@ -1,12 +1,11 @@
 #!/bin/sh
-if [ "${CONFIG}x" = "x" ]; then
+if [ "${CONFIG}x" == "x" ]; then
 	CONFIG=/data/config.ini
 fi
 
 if [ ! -e $CONFIG ]; then
 	cp /config.ini /data
 fi
-
 
 
 brctl addbr virbr0
