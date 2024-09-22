@@ -5,6 +5,7 @@
     "dynamips": "0.2.23-r1",
     "libcap": "2.70-r0",
     "py3-pip": "24.0-r2",
+    "python3-dev": "3.11.4-r0"
     "qemu-img": "9.0.2-r0",
     "qemu-system-x86_64": "9.0.2-r0",
     "ubridge": "0.9.18-r1",
