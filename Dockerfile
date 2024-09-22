@@ -4,8 +4,8 @@ FROM alpine:3.20.2
 ADD ./start.sh /start.sh
 ADD ./config.ini /config.ini
 ADD ./requirements.txt /requirements.txt
-COPY dependencies.json /tmp/dependencies.json
 COPY ./CiscoIOUKeygen.py /CiscoIOUKeygen.py
+COPY dependencies.json /tmp/dependencies.json
 
 
 
